@@ -3,10 +3,12 @@ package com.testing.springboot.service;
 import com.testing.springboot.entity.Employee;
 import com.testing.springboot.exception.ResourceNotFoundException;
 import com.testing.springboot.repository.EmployeeRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeService{
 
     private EmployeeRepository employeeRepository;
