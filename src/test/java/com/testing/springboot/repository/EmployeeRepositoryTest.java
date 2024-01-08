@@ -1,6 +1,7 @@
 package com.testing.springboot.repository;
 
 import com.testing.springboot.entity.Employee;
+import com.testing.springboot.integrationtest.AbstractBaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @DataJpaTest
-class EmployeeRepositoryTest {
+class EmployeeRepositoryTest  {
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -75,7 +76,7 @@ class EmployeeRepositoryTest {
     public void givenEmployeeObject_whenUpdate_thenReturnEmployee(){
        //given - precondition or setup
        //when - action or the  behaviour that we are going to test
-        Employee employee2 = employeeRepository.findById(1L).get();
+        Employee employee2 = employeeRepository.findById(employee1.getId()).get();
         employee2.setEmail("newemail@email.com");
        Employee updatedEmployee = employeeRepository.save(employee1);
        //Then - verify the output
